@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>13_aesop</title>
+        <style type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            :root{
+                --ibarra:'Ibarra Real Nova', serif;
+                --monospacia:'Comfortaa', cursive;
+                --crema: #FFFEF3;
+            }
+            img{
+                width: 100%;
+                
+            }
+            
+            body{
+                background: var(--crema);
+            }
+            
+            menu{
+                display: flex;
+                align-items: flex-end;
+                padding: 1em;
+                
+                
+            }
+            
+            menu select, menu a, menu ul{
+                padding: 0 1em;
+            }
+            ul ul{
+                visibility: hidden;
+                position: absolute;
+                background: var(--crema);
+                padding: 1em;
+            }
+            menu select{
+                border: none;
+                background: var(--cremma);
+            }
+            ul li:hover ul{
+                list-style-type: none;
+                visibility: inherit;
+            }
+            ul li ul li{
+                padding: 0.5em;
+                font-size: 2em;
+            }
+            ul li ul li a{
+                color: black;
+            }
+            h1{
+                width: 10%;
+                display:flex;
+                padding-left: 17.8em;
+                justify-content: center;
+            }
+            h2{
+                font-family: var(--ibarra);
+                padding-left: 21.5em;
+                justify-content: center;
+            }
+            nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 2 4em;
+            }
+            nav .navigation a:first-child{
+                border-bottom: 1px solid black;
+            }
+            nav a{
+                color: black;
+                margin: 0 1em 0 0;
+
+            }
+            .container{
+                display: grid;
+                grid-template: repeat(8, 130px) / repeat(5, 1fr);
+                grid-gap: 00px;
+            }
+            .container>div{
+                display: flex;
+                flex-direction: column;
+                
+            }
+            div header{
+                display: flex;
+                flex-direction: column;
+            }
+            .caixa_img{
+            flex-grow: 1;
+            overflow: hidden;
+            padding: 10px 10px 0 10px;
+            }
+            .caixa_img img{
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            }
+            .container header{
+                height: 30px;
+                padding: 0 10px 10px 10px;
+               
+                text-align: center;
+            }
+            .item-1{
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 5;
+            }
+            .item-2{
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            .item-3{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            .item-4{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 5;
+                grid-column-end: 6;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                
+            }
+            .item-5{
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                display: flex;
+                padding-top: 75px;
+                grid-column-start: 4;
+                grid-column-end: 6;
+                grid-row-start: 3;
+                grid-row-end: 5;
+            }
+            .item-6{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 5;
+                grid-row-end: 7;
+            }
+            .item-7{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 5;
+                grid-row-end: 6;
+            }
+            .item-8{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 6;
+                grid-row-end: 7;
+            }
+            .item-9{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 7;
+                grid-row-end: 9;
+            }
+            .item-10{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 3;
+                grid-column-end: 5;
+                grid-row-start: 5;
+                grid-row-end: 9;
+            }
+            .item-11{
+                display: flex;
+                align-content: center;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                grid-column-start: 5;
+                grid-column-end: 6;
+                grid-row-start: 5;
+                grid-row-end: 9;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <menu>
+                <select name="language" id="idioma">
+                    <option value="frances">Francés</option>
+                    <option value="angles">Anglés</option>
+                    <option value="italia">Italià</option>
+                </select>
+                <a href="http://aesop.com">aesop.com</a>
+                <ul>
+                    <li>Share</li>
+                    <ul>
+                        <li><a href="#"><i class="far fa-envelope"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab pinterest-p"></i></a></li>
+                    </ul>
+                </ul>
+            </menu>
+            <h1><img src="img/logo.png" alt="Aesop"></h1>
+            <h2>Taxonomy of Design</h2>
+            <nav>
+                <a href="#">Philosophy</a>
+                <div class="navigation">
+                <a href="#">all</a>
+                <a href="#">stores</a>
+                <a href="#">Designers</a>
+                <a href="#">Features</a>
+                <a href="#">Materials</a>
+                <a href="#">Quotes</a>
+                 </div>
+                  <form>
+                    <input type="text" value="search"/>
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    </form>
+            </nav>
+        </header>
+            <main>
+           <div class="container">
+            <div class="item-1">
+                <div class="caixa_img">
+                    <img src="img/aeosop_07.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Kyoto</h3>
+                    <h4>Kyoto, Japan</h4>
+                </header>
+            </div>
+            <div class="item-2">
+                <div class="caixa_img">
+                    <img src="img/aeosop_09.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Marble</h3>
+                    <h4>Saint-Sulpice, France</h4>
+                </header>
+            </div>
+            <div class="item-3">
+                <div class="caixa_img">
+                    <img src="img/aeosop_14.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Waxed Concrete</h3>
+                    <h4>Tiquettone-France</h4>
+                </header>
+            </div>
+            <div class="item-4">
+                <div class="caixa_img">
+                    <img src="img/aeosop_11.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Snohetta</h3>
+                </header>
+            </div>
+            <div class="item-5">
+               
+                <header>
+                    <h3>John Baldessari</h3>
+                    <h4></h4>
+                </header>
+            </div>
+            <div class="item-6">
+                <div class="caixa_img">
+                    <img src="img/aeosop_18.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Studio Ilse</h3>
+                    <h4></h4>
+                </header>
+            </div>
+            <div class="item-7">
+                <div class="caixa_img">
+                    <img src="img/aeosop_20.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Blackneed Steel</h3>
+                    <h4>Newbury Street, USA</h4>
+                </header>
+            </div>
+            <div class="item-8">
+                <div class="caixa_img">
+                    <img src="img/aeosop_25.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Sisal Flooring</h3>
+                    <h4>Geneva, Switzerland</h4>
+                </header>
+            </div>
+            <div class="item-9">
+                <div class="caixa_img">
+                    <img src="img/aeosop_28.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Coconut husk fringing</h3>
+                    <h4>Millenia Walk, Singapore</h4>
+                </header>
+            </div>
+            <div class="item-10">
+                <div class="caixa_img">
+                    <img src="img/aeosop_22.jpg" alt="">
+                </div>
+                <header>
+                    <h3>The Paris Review</h3>
+                    <h4>Chealsey, USA</h4>
+                </header>
+            </div>
+            <div class="item-11">
+                <div class="caixa_img">
+                    <img src="img/aeosop_23.jpg" alt="">
+                </div>
+                <header>
+                    <h3>Henry Willson Studios</h3>
+                </header>
+            </div>
+            </div>
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>
+
+
+
+
+
+
+
